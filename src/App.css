@@ -1,13 +1,13 @@
 /* App.css */
 :root {
-  --primary-color: #3d91b8;
-  --secondary-color: #706e6e;
-  --accent-color: #ff6b6b;
+  --primary-color: #4d7ea8;
+  --secondary-color: #686a6e;
+  /* --accent-color: #c9fbff; */
   --text-color: #333;
   --background-color: #161616;
-  --card-background: #3f3f3f;
-  --odd-color: #ff6b6b;
-  --even-color: #52d2bc;
+  --card-background: #262626;
+  --odd-color: #ffcb77;
+  --even-color: #a8dcd9;
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s ease;
 }
