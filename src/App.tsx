@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [inputNumber, setInputNumber] = useState(0);
+  const [result, setResult] = useState("");
+  const [showResult, setShowResult] = useState(false);
+  const [displayNumber, setDisplayNumber] = useState<number>(0);
+
+  const isOdd = (num: number): string => {
+    return num % 2 === 1 ? "odd" : "even";
+  };
+
+  const handleCheck = () => {
+    const newNumber = isOdd(inputNumber);
+    setResult(newNumber);
+    setShowResult(true);
+    setDisplayNumber(inputNumber);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="app-container">
+        <div className="card">
+          <h1>Is It Odd?</h1>
+          <div className="input-group">
+            <input
+              id="num-input"
+              name="num-input"
+              className="num-input"
+              value={inputNumber}
+              onChange={(e) => {
+                setInputNumber(parseInt(e.target.value) || 0);
+              }}
+            />
+            <button className="check-button" onClick={handleCheck}>
+              Check!
+            </button>
+          </div>
+
+          {result && (
+            <div className={`result ${showResult ? "show" : "hide"}`}>
+              <p>
+                The number <span className="input-value">{displayNumber}</span>{" "}
+                is:
+              </p>
+              <span className={`result-value ${result}`}>{result}</span>
+            </div>
+          )}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

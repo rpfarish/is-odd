@@ -1,42 +1,157 @@
+/* App.css */
+:root {
+  --primary-color: #3d91b8;
+  --secondary-color: #706e6e;
+  --accent-color: #ff6b6b;
+  --text-color: #333;
+  --background-color: #161616;
+  --card-background: #3f3f3f;
+  --odd-color: #ff6b6b;
+  --even-color: #52d2bc;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  /* border: 1px red solid; */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-container {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* min-height: 100vh; */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
-  padding: 2em;
+  background-color: var(--card-background);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: var(--transition);
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.num-input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.num-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(109, 99, 255, 0.2);
+}
+
+.check-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.check-button:hover {
+  background-color: #6293a7;
+  transform: translateY(-2px);
+}
+
+.check-button:active {
+  transform: translateY(0);
+}
+
+.result {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
+  opacity: 1;
+}
+
+.result.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.input-value {
+  font-weight: 700;
+}
+
+.result-value {
+  display: block;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.result-value.odd {
+  color: var(--odd-color);
+}
+
+.result-value.even {
+  color: var(--even-color);
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .check-button {
+    padding: 1rem;
+  }
 }
