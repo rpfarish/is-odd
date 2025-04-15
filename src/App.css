@@ -1,12 +1,16 @@
 /* App.css */
 :root {
-  --primary-color: #4d7ea8;
-  --secondary-color: #686a6e;
+  --primary-color: hsl(204, 37%, 68%);
+  --secondary-color: hsl(208, 30%, 25%);
   /* --accent-color: #c9fbff; */
-  --text-color: #333;
+  --text-color: white;
+  --button-text-color: white;
+  --button-color: hsl(208, 37%, 45%);
+  --button-color-hover: hsl(208, 37%, 50%);
   --background-color: #161616;
   --card-background: #262626;
-  --odd-color: #ffcb77;
+
+  --odd-color: hsl(359, 55%, 73%);
   --even-color: #a8dcd9;
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s ease;
@@ -82,8 +86,8 @@ h1 {
 }
 
 .check-button {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
   border: none;
   border-radius: 8px;
   padding: 0 1.5rem;
@@ -94,7 +98,7 @@ h1 {
 }
 
 .check-button:hover {
-  background-color: #6293a7;
+  background-color: var(--button-color-hover);
   transform: translateY(-2px);
 }
 

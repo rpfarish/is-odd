@@ -17,6 +17,10 @@ function App() {
     setShowResult(true);
     setDisplayNumber(inputNumber);
   };
+  const handleInputEnter = (e: any) => {
+    if (e.key === "Enter") handleCheck();
+    console.log(e);
+  };
 
   return (
     <>
@@ -25,6 +29,7 @@ function App() {
           <h1>Is It Odd?</h1>
           <div className="input-group">
             <input
+              type="form"
               id="num-input"
               name="num-input"
               className="num-input"
@@ -32,6 +37,7 @@ function App() {
               onChange={(e) => {
                 setInputNumber(parseInt(e.target.value) || 0);
               }}
+              onKeyDown={handleInputEnter}
             />
             <button className="check-button" onClick={handleCheck}>
               Check!
