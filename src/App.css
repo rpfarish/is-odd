@@ -23,7 +23,7 @@
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Roboto", system-ui, sans-serif;
 }
 
 body {
@@ -52,10 +52,6 @@ body {
   max-width: 500px;
   text-align: center;
   transition: var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-5px);
 }
 
 h1 {
@@ -127,7 +123,8 @@ h1 {
 }
 
 .input-value {
-  font-weight: 700;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .result-value {
